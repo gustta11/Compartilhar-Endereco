@@ -1,0 +1,21 @@
+.layoutForm{
+    background-color: white;
+    width: 300px;
+    height: 400px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    box-shadow: 2px 2px 1px #e1e1e1;
+    
+}
+
+.conteudoForm p{
+    color: black;
+    
+}
+
+.conteudoForm{
+    padding: 16px 24px;
+}
