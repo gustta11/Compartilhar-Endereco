@@ -11,11 +11,45 @@
     
 }
 
-.conteudoForm p{
+
+
+.conteudoForm{
+    display: flex;
+    padding: 16px 24px;
     color: black;
+    height: 100%;
+    
+   
     
 }
 
-.conteudoForm{
-    padding: 16px 24px;
+form{
+    display: flex;
+    gap: 16px;
+    flex-direction: column;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+   
+}
+
+input{
+    all: unset;
+    
+}
+
+.conteudoForm input{
+    border: solid 1px #e1e1e1;
+    border-radius: 10px;
+    padding: 3px;
+}
+
+.conteudoForm button{
+    padding-top: 16px;
+}
+
+.botoes{
+    display: flex;
+    gap: 16px;
+
 }

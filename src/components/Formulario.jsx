@@ -1,24 +1,36 @@
 import './Formulario.css'
-import {UseState} from 'react'
+import {useState} from 'react'
 import { useForm} from "react-hook-form"
 
 const Formulario = () =>{
 
     const {register, handleSubmit} = useForm();
+    
 
-    const onSubmit = (e)=>{
-        let botao = document.querySelector('.botaoWhats')
-        let url = `https://api.whatsapp.com/send?phone=${encodeURIComponent(e.contato)}&text=${encodeURIComponent(e.nome)}`
-        botao.setAttribute('href',url)
-        botao.setAttribute('target', '_blank')
+
+
+    const onSubmit = async(e)=>{
+        const response = await fetch(`https://viacep.com.br/ws/${e.cep}/json/`)
+        const data = await response.json()
+
+        const dados = {
+            
+            estado:data.uf,
+            cep: data.cep,
+            cidade: data.localidade,
+            bairro: data.bairro,
+            logradouro:data.logradouro
+
+        }
+
+
+        let url = `https://api.whatsapp.com/send?phone=${encodeURIComponent(e.contato)}&text=${encodeURIComponent(` Estado${dados.estado} \n Cidade:${dados.cidade}\n Bairro:${dados.bairro}\n Logradouro:${dados.logradouro}`)}`
+       
+        window.open(url)
+
+
     }
 
-    /*const whats =(e)=>{
-        let botao = document.querySelector('.botaoWhats')
-        let url = `https://api.whatsapp.com/send?phone=${encodeURIComponent(e.contato)}&text=${encodeURIComponent(e.nome)}`
-        botao.setAttribute('href',url)
-        botao.setAttribute('target', '_blank')
-    }*/
 
     return(
         <div className='layoutForm'>
@@ -34,10 +46,11 @@ const Formulario = () =>{
                 </label>
                 <label>
                     CEP:
-                    <input type="text" />
+                    <input type="text" {...register('cep')} />
                 </label>
-                <button type='submit'> Enviar </button>
-                <a className='botaoWhats'><button>Whatsapp</button></a>
+                <div className='botoes'>
+                    <button type='submit'> Enviar </button>  
+                </div>
               </form>
             </div>
         </div>
