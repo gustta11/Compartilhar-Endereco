@@ -1,8 +1,9 @@
-# React + Vite
+# Compartilhando CEP
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Esse projeto foi desenvolvido com o objetivo de compartilhar o CEP, junto com a localidade, logradouro e outras informações no Whatsapp do número que você informar no formulário.
+Nesse projeto eu utilizei a API dos correios para pegar os dados de acordo com o CEP e também utilizei o React Hook form que facilitou a pegar as informações inseridas nos inputs.
 
-Currently, two official plugins are available:
+#Tecnologias
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Vite
+React.js
