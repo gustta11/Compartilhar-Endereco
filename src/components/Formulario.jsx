@@ -4,14 +4,13 @@ import { useForm} from "react-hook-form"
 
 const Formulario = () =>{
 
-    const {register, handleSubmit} = useForm();
+    let {register, handleSubmit} = useForm();
     
-
-
-
     const onSubmit = async(e)=>{
         const response = await fetch(`https://viacep.com.br/ws/${e.cep}/json/`)
         const data = await response.json()
+
+        console.log(e)
 
         const dados = {
             
@@ -28,9 +27,10 @@ const Formulario = () =>{
        
         window.open(url)
 
+   
+
 
     }
-
 
     return(
         <div className='layoutForm'>

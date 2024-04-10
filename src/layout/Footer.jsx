@@ -3,7 +3,7 @@ import './Footer.css'
 const Rodape = () =>{
     return(
         <div className='rodape'>
-            <h1>&copy;Gustavo Keven</h1>
+            <p> &copy;Gustavo Keven </p>
         </div>
     )
 }
