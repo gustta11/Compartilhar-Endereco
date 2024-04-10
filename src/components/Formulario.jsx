@@ -23,7 +23,7 @@ const Formulario = () =>{
         }
 
 
-        let url = `https://api.whatsapp.com/send?phone=${encodeURIComponent(e.contato)}&text=${encodeURIComponent(` Olá ${e.nome} CEP:${dados.cep}\n Estado:${dados.estado} \n Cidade:${dados.cidade}\n Bairro:${dados.bairro}\n Logradouro:${dados.logradouro}`)}`
+        let url = `https://api.whatsapp.com/send?phone=${encodeURIComponent(e.contato)}&text=${encodeURIComponent(` Olá ${e.nome}, CEP:${dados.cep}\n Estado:${dados.estado} \n Cidade:${dados.cidade}\n Bairro:${dados.bairro}\n Logradouro:${dados.logradouro}`)}`
        
         window.open(url)
 
